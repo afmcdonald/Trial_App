@@ -13,6 +13,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,6 +27,15 @@
             android:text="Price"
             android:id="@+id/buyPrice"
             android:layout_marginTop="5dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="View Item"
+            android:id="@+id/viewItem"
+            android:layout_gravity="right"
+            android:onClick="openItem" />
 
         <TextView
             android:layout_width="wrap_content"

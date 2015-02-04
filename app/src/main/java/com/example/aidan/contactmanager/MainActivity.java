@@ -21,11 +21,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.net.Uri;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    public final static String EXTRA_MESSAGE = "com.example.aidan.contactmanager.MESSAGE";
 
     private static final int EDIT = 0, DELETE = 1;
 
@@ -125,6 +128,11 @@ public class MainActivity extends ActionBarActivity {
         populateList();
     }
 
+    public void openItem(View view){
+        Intent intent = new Intent(this,DisplayItem.class);
+        startActivity(intent);
+    }
+
     public void onCreateContextMenu(ContextMenu menu, View view, ContextMenu.ContextMenuInfo menuInfo){
         super.onCreateContextMenu(menu, view, menuInfo);
 
@@ -176,9 +184,6 @@ public class MainActivity extends ActionBarActivity {
         contactListView.setAdapter(contactAdapter);//what is this adapter?
     }
 
-//    private void addContact(String name, String phone, String email, String address) {//on button click
-//        Contacts.add(new Contact(name, phone, email, address));
-//    }
 
     private class ContactListAdapter extends ArrayAdapter<Contact>{ //Here's the list
         public ContactListAdapter(){
